@@ -48,15 +48,15 @@ import * as React from 'react';
 import { Icons } from '../icons';
 import { OrgSwitcher } from '../org-switcher';
 export const company = {
-  name: 'Acme Inc',
+  name: 'Main Home',
   logo: IconPhotoUp,
   plan: 'Enterprise'
 };
 
 const tenants = [
-  { id: '1', name: 'Acme Inc' },
-  { id: '2', name: 'Beta Corp' },
-  { id: '3', name: 'Gamma Ltd' }
+  { id: '1', name: 'Main Home' },
+  { id: '2', name: 'Rental Apartment' },
+  { id: '3', name: 'Vacation Condo' }
 ];
 
 export default function AppSidebar() {
@@ -64,7 +64,7 @@ export default function AppSidebar() {
   const { isOpen } = useMediaQuery();
   const { user } = useUser();
   const router = useRouter();
-  const handleSwitchTenant = (_tenantId: string) => {
+  const handleSwitchTenant = () => {
     // Tenant switching functionality would be implemented here
   };
 
@@ -85,7 +85,7 @@ export default function AppSidebar() {
       </SidebarHeader>
       <SidebarContent className='overflow-x-hidden'>
         <SidebarGroup>
-          <SidebarGroupLabel>Overview</SidebarGroupLabel>
+          <SidebarGroupLabel>MyWallet</SidebarGroupLabel>
           <SidebarMenu>
             {navItems.map((item) => {
               const Icon = item.icon ? Icons[item.icon] : Icons.logo;
@@ -190,7 +190,7 @@ export default function AppSidebar() {
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <IconCreditCard className='mr-2 h-4 w-4' />
-                    Billing
+                    Membership
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <IconBell className='mr-2 h-4 w-4' />
